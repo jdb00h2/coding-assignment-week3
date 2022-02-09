@@ -77,13 +77,32 @@ console.log(sum);
 // // 8.	Write a function that takes two parameters, firstName and lastName, and returns a full name (the full name should be the first and the last name separated by a space).
 
 function fullName(firstName, lastName){
-    console.log(firstName + ' ' + lastName);
+    return(firstName + ' ' + lastName);
 }
 
 // // 9.	Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
 
+function greaterThan(inputArray){
+    for(let i = 0; i < inputArray.length; i++){
+    sum += inputArray[i]; 
+    } 
+    if (sum > 100){
+    return true
+    } 
+}
 
 // // 10.	Write a function that takes an array of numbers and returns the average of all the elements in the array.
+
+function average(x){
+    for(let i = 0; i < x.length; i++){
+        total += x[i]; 
+        mean = total/x.length
+    return mean
+    }
+}
+console.log(nameLengths);
+let test = average(nameLengths);
+console.log(test)
 
 
 // // 11.	Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
@@ -93,7 +112,7 @@ function fullName(firstName, lastName){
 
 function willBuyDrink(isHotOutside, moneyInPocket){
     if (isHotOutside && moneyInPocket > 10.50){
-        console.log('true')
+        return('true')
     }
 }
 
