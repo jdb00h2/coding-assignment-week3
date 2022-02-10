@@ -136,7 +136,7 @@ function willBuyDrink(isHotOutside, moneyInPocket){
 // // 13.	Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
 
 // This function compares the scorecards from two players after a round of mini golf. It accepts the input as arrays with 18 values
-// to represent the eighteen holes played. I created this function because I have fun memories of playing mini golf and it seemed 
+// to represent the eighteen holes played. I created this function because I have fond memories of playing mini golf and it seemed 
 // like a reasonable way to test what I've learned this week. 
 
 playerOneScores = [3, 4, 3, 5, 8, 2, 4, 4, 5, 3, 6, 4, 5, 5, 3, 4, 2, 5]
