@@ -139,15 +139,30 @@ function willBuyDrink(isHotOutside, moneyInPocket){
 // to represent the eighteen holes played. I created this function because I have fond memories of playing mini golf and it seemed 
 // like a reasonable way to test what I've learned this week. 
 
-playerOneScores = [3, 4, 3, 5, 8, 2, 4, 4, 5, 3, 6, 4, 5, 5, 3, 4, 2, 5]
-playerTwoScores = [2, 3, 4, 3, 5, 6, 4, 6, 5, 2, 6, 6, 4, 6, 1, 5, 5, 4]
+playerOneScores = [3, 4, 3, 5, 8, 2, 4, 4, 5, 3, 6, 4, 5, 5, 3, 3, 2, 3]
+playerTwoScores = [2, 3, 5, 3, 5, 6, 4, 6, 5, 2, 6, 6, 4, 5, 1, 2, 5, 4]
 
 playerOne = 'Jeffery'
 playerTwo = 'Marina'
+
 function whoWins(player1, player2){
-    if(player1.length !== 18 || player2.length !== 18){
-        return 'Invalid scorecard.'
+    function conditions(player1, player2){
+        let i = 0
+        let max1 = Math.max.apply(player1[i], player1);
+        let max2 = Math.max.apply(player2[i], player2);
+        let min1 = Math.min.apply(player1[i], player1);
+        let min2 = Math.min.apply(player2[i], player2);
+        if(player1.length !== 18 || player2.length !== 18){
+            return true
+        } else if (max1 > 8 || max2 > 8){
+            return true
+        } else if (min1 < 1 || min2 < 1){
+            return true
+        }
     }
+    if (conditions(player1, player2))
+        return 'Invalid scorecard.';
+
     let sum1 = player1.reduce(function(previousValue, currentValue){
         return previousValue + currentValue;
     })
@@ -155,13 +170,13 @@ function whoWins(player1, player2){
         return previousValue + currentValue;
     })
     if(sum1 == sum2){
-        return 'Its all knotted up, into the playoff you go!'
+        return "It's a draw, flip a coin!"
     } else if(sum1 < sum2){
         let win = sum2 - sum1
         return `${playerOne} wins by ${win}!`
     } else {
         let win = sum1 - sum2
-        return `Player Two wins by ${win}!`
+        return `${playerTwo} wins by ${win}!`
     }
 }
 
